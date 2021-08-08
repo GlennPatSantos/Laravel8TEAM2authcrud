@@ -29,19 +29,22 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Title</th>
-                            <th>Published At</th>
+                            <th>Unit Id</th>
+                            <th>Department</th>
+                           
                             <th>Created at</th>
-                            <th colspan="2">Action</th>
+                            <th>Updated at</th>
+                            <th colspan="3">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($posts as $post)
                         <tr>
                             <td>{{ $post->id }}</td>
-                            <td>{{ $post->title }}</td>
-                            <td>{{ date('Y-m-d', strtotime($post->published_at)) }}</td>
+                            <td>{{ $post->unit_id }}</td>
+                            <td>{{ $post->department }}</td>
                             <td>{{ date('Y-m-d', strtotime($post->created_at)) }}</td>
+                            <td>{{ date('Y-m-d', strtotime($post->updated_at)) }}</td>
                             <td>
                             <a href="posts/{{$post->id}}" class="btn btn-primary">Show</a>
                             <a href="posts/{{$post->id}}/edit" class="btn btn-primary">Edit</a>
